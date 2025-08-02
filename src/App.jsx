@@ -11,6 +11,7 @@ import BookDetail from "./pages/BookDetail";
 import Authors from "./pages/Authors";
 import AuthorDetail from "./pages/AuthorDetail";
 import AdminPanel from "./pages/AdminPanel";
+import Landing from "./pages/LandingPage";
 
 // components
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -57,7 +58,12 @@ function App() {
                 isAuthenticated() ? <Navigate to="/dashboard" replace /> : <Register />
               }
             />
-
+            <Route
+              path="/"
+              element={
+                isAuthenticated() ? <Navigate to="/dashboard" replace /> : <Landing />
+              }
+            />
             {/* Protected Routes */}
             <Route
               path="/dashboard"
